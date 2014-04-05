@@ -22,12 +22,12 @@ favicon: /public/upload/gavatar/favicon.ico
 
 # google analytics 设置
 ga:
-  id: UA-43667383-1
-  url: yansu.org
+  id: UA-49729354-1
+  url: allan.li
 
 # disqus 设置
 disqus:
-  shortname: suyan-zh
+  shortname: lialun
 
 # 主题设置，自动激活某个标签
 active: 技术
@@ -35,10 +35,15 @@ active: 技术
 # 中文本地化
 locals:
   tags: 标签
-  about: 关于
+  about: About
+  java: Java
+  android: Android
+  tool: Tool
+  resource: Resource
+  book: Book
 
 #二级目录列表（其余为一级目录）
-secondary: 技术|工具
+secondary: android|java|tools
 
 # 编码
 encoding: utf-8

@@ -6,13 +6,13 @@
       <br><br>
       <ul class="nav nav-pills nav-stacked">
         {% for category in site.categories %}
+        	{% assign categoryname = category[0] %}        	
         	{% if site.secondary contains category.first %}
-        	   <li><a href="#{{ category | first }}tags" data-toggle="tab">{{ category[0] }}</a></li>        	
+        	   <li><a href="#{{ category | first }}tags" data-toggle="tab">{{ site.locals.[categoryname] }}</a></li>        	
         	{% else %}
-        	   <li><a href="#{{ category | first }}" data-toggle="tab">{{ category[0] }}</a></li>
+        	   <li><a href="#{{ category | first }}" data-toggle="tab">{{ site.locals.[categoryname] }}</a></li>
         	{% endif %}
         {% endfor %}
-        <li><a href="#tags" data-toggle="tab">{{ site.locals.tags }}</a></li>
         <li><a class="pjaxlink" href="/pages/about.html">{{ site.locals.about }}</a></li>
       </ul>
       <div class="aside1_bottom">
@@ -31,7 +31,8 @@
            	{% if site.secondary contains category.first %}
         	  <div class="tab-pane" id="{{ category | first }}tags">
 	          	<div class="panel-group" id="accordion">
-	            	<h2 class="center">{{ category[0] }}</h2>             
+	          		{% assign categoryname = category[0] %}       
+	            	<h2 class="center">{{ site.locals.[categoryname] }}</h2>             
 	              {% for tag in site.tags %} 
 	              	{% assign words = tag[0] | split:'@' %}
 	             		{% if words[1] == category.first %}
