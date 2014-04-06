@@ -58,7 +58,8 @@
         		{% else %}
         	  	<div class="tab-pane" id="{{ category[0] }}">
              		<div class="list-group">
-                	<h2 class="center">{{ category[0] }}</h2>
+             			{% assign categoryname = category[0] %}
+                	<h2 class="center">{{ site.locals.[categoryname] }}</h2>
                 	{% for post in category[1] %}
                   	<a href="{{ post.url }}" class="list-group-item pjaxlink">{{post.title}}</a>
                 	{% endfor %}
