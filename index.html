@@ -19,9 +19,9 @@ title: 首页
       </div>
       <div class="col-md-12">
         <div class="panel panel-primary">
-          <div class="panel-heading">Java</div>
+          <div class="panel-heading">MySQL</div>
           {% for tag in site.tags %} 
-            {% if tag[0] == 'Python' %}
+            {% if tag[0] contains '@mysql' %}
               {% for post in tag[1] %}
                 <a  href='{{ post.url }}' class="list-group-item pjaxlink">
                   {{post.title}}
@@ -37,9 +37,9 @@ title: 首页
     <div class="row">
       <div class="col-md-12">
         <div class="panel panel-primary">
-          <div class="panel-heading">MySQL</div>
+          <div class="panel-heading">Java</div>
           {% for tag in site.tags %} 
-            {% if tag[0] == 'OpenStack' %}
+            {% if tag[0] contains '@java' %}
               {% for post in tag[1] %}
                 <a  href='{{ post.url }}' class="list-group-item pjaxlink">
                   {{post.title}}

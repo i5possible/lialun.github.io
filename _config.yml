@@ -41,7 +41,7 @@ locals:
   tool: Tool
   resource: Resource
   book: Book
-
+  mysql: MySQL
 #二级目录列表（其余为一级目录）
 secondary: android|java|tools
 

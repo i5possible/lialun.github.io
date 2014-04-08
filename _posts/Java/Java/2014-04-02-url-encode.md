@@ -2,7 +2,7 @@
 layout: post
 title: java中URL编码
 category: java
-tags: IDE@java
+tags: Java@java
 keywords: eclipse shortcut
 description: http协议处理请求中文的url编码
 from: http://haiyang08101.iteye.com/blog/1490759
