@@ -43,7 +43,7 @@ locals:
   book: Book
   mysql: MySQL
 #二级目录列表（其余为一级目录）
-secondary: android|java|tools
+secondary: android|java|tools|mysql
 
 # 编码
 encoding: utf-8
