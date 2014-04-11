@@ -24,7 +24,7 @@ from: http://coolshell.cn/articles/1846.html
 上面两条SQL语句的差别就是 `CURDATE()` ，MySQL的查询缓存对这个函数不起作用。所以，像 `NOW()` 和 `RAND()` 或是其它的诸如此类的SQL函数都不会开启查询缓存，因为这些函数的返回是会不定的易变的。所以，你所需要的就是用一个变量来代替MySQL的函数，从而开启缓存。
 
 ###2. EXPLAIN你的SELECT查询。
-使用[EXPLAIN][1]关键字可以让你知道`MySQL`是如何处理你的SQL语句，这可以帮你分析你的查询语句或是表结构的性能瓶颈。
+使用[EXPLAIN][explain]关键字可以让你知道`MySQL`是如何处理你的SQL语句，这可以帮你分析你的查询语句或是表结构的性能瓶颈。
 
 `EXPLAIN`的查询结果还会告诉你你的索引主键被如何利用的，你的数据表是如何被搜索和排序的……等等，等等。
 
@@ -64,7 +64,7 @@ from: http://coolshell.cn/articles/1846.html
 
 从上图你可以看到那个搜索字串 `last_name LIKE ‘a%’`，一个是建了索引，一个是没有索引，性能差了4倍左右。
 
-另外，你应该也需要知道什么样的搜索是不能使用正常的索引的。例如，当你需要在一篇大的文章中搜索一个词时，如： `WHERE post_content LIKE ‘%apple%’`，索引可能是没有意义的。你可能需要使用MySQL全文索引 或是自己做一个索引（比如说：搜索关键词或是Tag什么的）
+另外，你应该也需要知道什么样的搜索是不能使用正常的索引的。例如，当你需要在一篇大的文章中搜索一个词时，如： `WHERE post_content LIKE ‘%apple%’`，索引可能是没有意义的。你可能需要使用[MySQL全文索引][fulltext] 或是自己做一个索引（比如说：搜索关键词或是Tag什么的）
 
 ###5. 在Join表的时候使用相当类型的例，并将其索引
 如果你的应用程序有很多 JOIN 查询，你应该确认两个表中Join的字段是被建过索引的。这样，MySQL内部会启动为你优化Join的SQL语句的机制。
@@ -119,14 +119,14 @@ from: http://coolshell.cn/articles/1846.html
 比如：有一个“学生表”有学生的ID，有一个“课程表”有课程ID，那么，“成绩表”就是“关联表”了，其关联了学生表和课程表，在成绩表中，学生ID和课程ID叫“外键”其共同组成主键。
 
 ###9. 使用 ENUM 而不是 VARCHAR
-`ENUM`类型是非常快和紧凑的。在实际上，其保存的是`TINYINT`，但其外表上显示为字符串。这样一来，用这个字段来做一些选项列表变得相当的完美。
+[ENUM][enum]类型是非常快和紧凑的。在实际上，其保存的是`TINYINT`，但其外表上显示为字符串。这样一来，用这个字段来做一些选项列表变得相当的完美。
 
 如果你有一个字段，比如“性别”，“国家”，“民族”，“状态”或“部门”，你知道这些字段的取值是有限而且固定的，那么，你应该使用`ENUM`而不是 `VARCHAR`。
 
 MySQL也有一个“建议”（见第十条）告诉你怎么去重新组织你的表结构。当你有一个`VARCHAR`字段时，这个建议会告诉你把其改成`ENUM`类型。使用`PROCEDURE ANALYSE()`你可以得到相关的建议。
 
 ###10. 从 PROCEDURE ANALYSE() 取得建议
-[PROCEDURE ANALYSE()][2]会让 MySQL 帮你去分析你的字段和其实际的数据，并会给你一些有用的建议。只有表中有实际的数据，这些建议才会变得有用，因为要做一些大的决定是需要有数据作为基础的。
+[PROCEDURE ANALYSE()][procedure-analyse]会让 MySQL 帮你去分析你的字段和其实际的数据，并会给你一些有用的建议。只有表中有实际的数据，这些建议才会变得有用，因为要做一些大的决定是需要有数据作为基础的。
 
 例如，如果你创建了一个 INT 字段作为你的主键，然而并没有太多的数据，那么，`PROCEDURE ANALYSE()`会建议你把这个字段的类型改成`MEDIUMINT`。或是你使用了一个`VARCHAR`字段，因为数据不多，你可能会得到一个让你把它改成`ENUM`的建议。这些建议，都是可能因为数据不够多，所以决策做得就不够准。
 
@@ -175,7 +175,7 @@ For MyISAM tables, each NULL column takes one bit extra, rounded up to the neare
 ###13.用无缓冲查询
 正常的情况下，当你在当你在你的脚本中执行一个SQL语句的时候，你的程序会停在那里直到没这个SQL语句返回，然后你的程序再往下继续执行。你可以使用无缓冲查询来改变这个行为。
 
-关于这个事情，在PHP的文档中有一个非常不错的说明： mysql\_unbuffered\_query() 函数：
+关于这个事情，在PHP的文档中有一个非常不错的说明： [mysql\_unbuffered\_query()][mysql-unbuffered-query] 函数：
 
 > “mysql\_unbuffered\_query() sends the SQL query query to MySQL without automatically fetching and buffering the result rows as mysql\_query() does. This saves a considerable amount of memory with SQL queries that produce large result sets, and you can start working on the result set immediately after the first row has been retrieved as you don’t have to wait until the complete SQL query has been performed.”
 
@@ -188,12 +188,12 @@ For MyISAM tables, each NULL column takes one bit extra, rounded up to the neare
 
 我们必需要使用UNSIGNED INT，因为 IP地址会使用整个32位的无符号整形。
 
-而你的查询，你可以使用 INET_ATON() 来把一个字符串IP转成一个整形，并使用 INET_NTOA() 把一个整形转成一个字符串IP。在PHP中，也有这样的函数 `ip2long()` 和 `long2ip()`。
+而你的查询，你可以使用 [INET_ATON()][aton] 来把一个字符串IP转成一个整形，并使用 [INET_NTOA()][ntoa] 把一个整形转成一个字符串IP。在PHP中，也有这样的函数 [ip2long()][ip2l] 和 [long2ip()][l2ip]。
 
     $r = "UPDATE users SET ip = INET_ATON('{$_SERVER['REMOTE_ADDR']}') WHERE user_id = $user_id";
 
 ###15. 固定长度的表会更快
-如果表中的所有字段都是“固定长度”的，整个表会被认为是 “static” 或 “fixed-length”。 例如，表中没有如下类型的字段： `VARCHAR`，`TEXT`，`BLOB`。只要你包括了其中一个这些字段，那么这个表就不是“固定长度静态表”了，这样，MySQL 引擎会用另一种方法来处理。
+如果表中的所有字段都是“固定长度”的，整个表会被认为是[“static” 或 “fixed-length”][static-format]。 例如，表中没有如下类型的字段： `VARCHAR`，`TEXT`，`BLOB`。只要你包括了其中一个这些字段，那么这个表就不是“固定长度静态表”了，这样，MySQL 引擎会用另一种方法来处理。
 
 固定长度的表会提高性能，因为MySQL搜寻得会更快一些，因为这些固定的长度是很容易计算下一个数据的偏移量的，所以读取的自然也会很快。而如果字段不是定长的，那么，每一次要找下一条的话，需要程序找到主键。
 
@@ -231,18 +231,21 @@ Apache 会有很多的子进程或线程。所以，其工作起来相当有效�
 
 ###18. 越小的列会越快
 对于大多数的数据库引擎来说，硬盘操作可能是最重大的瓶颈。所以，把你的数据变得紧凑会对这种情况非常有帮助，因为这减少了对硬盘的访问。
-参看MySQL的文档`Storage Requirements`查看所有的数据类型。
+参看MySQL的文档[Storage Requirements][storage-requirements]查看所有的数据类型。
 如果一个表只会有几列罢了（比如说字典表，配置表），那么，我们就没有理由使用`INT`来做主键，使用`MEDIUMINT`,`SMALLINT`或是更小的`TINYINT`会更经济一些。如果你不需要记录时间，使用`DATE`要比`DATETIME`好得多。
 
-当然，你也需要留够足够的扩展空间，不然，你日后来干这个事，你会死的很难看，参看Slashdot的例子（2009年11月06日），一个简单的ALTER TABLE语句花了3个多小时，因为里面有一千六百万条数据。
+当然，你也需要留够足够的扩展空间，不然，你日后来干这个事，你会死的很难看，参看[Slashdot的例子（2009年11月06日）][slashdot]，一个简单的ALTER TABLE语句花了3个多小时，因为里面有一千六百万条数据。
 
 ###19. 选择正确的存储引擎
-在MySQL中有两个存储引擎`MyISAM`和`InnoDB`，每个引擎都有利有弊。酷壳以前文章《MySQL: InnoDB 还是 MyISAM?》讨论和这个事情。
+在MySQL中有两个存储引擎`MyISAM`和`InnoDB`，每个引擎都有利有弊。酷壳以前文章《[MySQL: InnoDB 还是 MyISAM?][MyISAM-or-InnoDB]》讨论和这个事情。
 `MyISAM`适合于一些需要大量查询的应用，但其对于有大量写操作并不是很好。甚至你只是需要update一个字段，整个表都会被锁起来，而别的进程，就算是读进程都无法操作直到读操作完成。另外，`MyISAM`对于`SELECT COUNT(*)`这类的计算是超快无比的。
 
 `InnoDB`的趋势会是一个非常复杂的存储引擎，对于一些小的应用，它会比`MyISAM`还慢。他是它支持“行锁” ，于是在写操作比较多的时候，会更优秀。并且，他还支持更多的高级应用，比如：事务。
 
 下面是MySQL的手册
+
+* [MyISAM Storage Engine][myisam]
+* [InnoDB Storage Engine][innodb]
 
 ###20. 使用一个对象关系映射器（Object Relational Mapper）
 使用 ORM (Object Relational Mapper)，你能够获得可靠的性能增涨。一个ORM可以做的所有事情，也能被手动的编写出来。但是，这需要一个高级专家。
@@ -258,6 +261,18 @@ ORM 还可以把你的SQL语句打包成一个事务，这会比单独执行他�
 
 而且，Apache 运行在极端并行的环境中，会创建很多很多的了进程。这就是为什么这种“永久链接”的机制工作地不好的原因。在你决定要使用“永久链接”之前，你需要好好地考虑一下你的整个系统的架构。
 
-[1]: http://dev.mysql.com/doc/refman/5.6/en/explain.html
-
-[2]: http://dev.mysql.com/doc/refman/5.6/en/procedure-analyse.html
+[explain]: http://dev.mysql.com/doc/refman/5.6/en/explain.html
+[procedure-analyse]: http://dev.mysql.com/doc/refman/5.6/en/procedure-analyse.html
+[fulltext]: http://dev.mysql.com/doc/refman/5.6/en/fulltext-search.html
+[enum]: http://dev.mysql.com/doc/refman/5.6/en/enum.html
+[mysql-unbuffered-query]: http://php.net/manual/en/function.mysql-unbuffered-query.php
+[aton]: http://dev.mysql.com/doc/refman/5.6/en/miscellaneous-functions.html#function_inet-aton
+[ntoa]: http://dev.mysql.com/doc/refman/5.6/en/miscellaneous-functions.html#function_inet-ntoa
+[ip2l]: http://php.net/manual/en/function.ip2long.php
+[l2ip]: http://us.php.net/manual/en/function.long2ip.php
+[static-format]: http://dev.mysql.com/doc/refman/5.6/en/static-format.html
+[storage-requirements]:  http://dev.mysql.com/doc/refman/5.6/en/storage-requirements.html
+[slashdot]: http://slashdot.org/story/06/11/09/1534204/slashdot-posting-bug-infuriates-haggard-admins
+[InnoDB-or-MyISAM]: http://coolshell.cn/articles/652.html
+[myisam]: http://dev.mysql.com/doc/refman/5.6/en/myisam-storage-engine.html
+[innodb]: http://dev.mysql.com/doc/refman/5.6/en/innodb-storage-engine.html

@@ -42,7 +42,6 @@ locals:
   resource: Resource
   book: Book
   mysql: MySQL
-  server: Server
 #二级目录列表（其余为一级目录）
 secondary: android|java|tools|mysql
 
