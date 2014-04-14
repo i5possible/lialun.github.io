@@ -6,13 +6,13 @@ body,html{
   margin:0px;
   height:100%;
   overflow:hidden;
-  background-color: #1f2c39;
+  background-color: #333333;
 }
 .row{
   height:100%;
 }
 .aside1{
-  background-color: #1f2c39;
+  background-color: #222222;
   height:100%;
   padding-left: 0px;
   padding-right:0px;
@@ -40,26 +40,27 @@ body,html{
   margin-bottom: 0px;
 }
 .aside2{
-  background-color: #fafaf6;
+  background-color: #333333;
   height:100%;
-  border-right: 2px solid #18bc9c;
+  border-right: 2px solid #444444;
   overflow-y: auto;
 }
 .aside3{
   height:100%;
   overflow-y: auto;
-  background-color: #fafaf6;
+  background-color: #444444;
 }
 .aside3-title{
-  background-color: #1f2c39;
+  background-color: #444444;
   padding-left: 30px;
   padding-right: 30px;
   text-align: center;
-  color: #FFF;
+  color: #DDDDDD;
 }
 .aside3-content{
   padding-left: 30px;
   padding-right: 30px;
+  color: #DDDDDD;
 }
 #content {font-size:18px;line-height:1.8;}
 #content h2,h3{line-height: 2;}
@@ -68,11 +69,21 @@ blockquote p{font-size:20px;}
 .nav-pills>li.active>a,
 .nav-pills>li.active>a:hover,
 .nav-pills>li.active>a:focus{
-  color: #2a6496;
-  background-color: #fafaf6;
+  color: #333333;
+  background-color: #FFCC00;
 }
 
 .show-commend{
   width:100%;
   margin-bottom:40px;
+}
+
+a.list-group-item {
+	color: #FFCC00;
+  background-color: #333333;
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+	text-decoration: none;
+	background-color: #FFCC00;
 }
