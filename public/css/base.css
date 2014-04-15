@@ -8,21 +8,37 @@ body,html{
   overflow:hidden;
   background-color: #333333;
 }
+
+a {
+	color: #FFCC00;
+	text-decoration: none;
+}
+
+a:active, a:hover{
+	color: #FF9900;
+	outline: 0;
+}
+
+
 .row{
   height:100%;
 }
+
 .aside1{
   background-color: #222222;
   height:100%;
   padding-left: 0px;
   padding-right:0px;
   text-align:center;
+  box-shadow: inset -15px 0 15px -15px #111111;
 }
+
 .aside1 > .nav > li > a{
   padding-left: 0px;
   padding-right: 0px;
   border-radius:0px;
 }
+
 .avatar{
   width:50px;
   height:50px;
@@ -44,6 +60,7 @@ body,html{
   height:100%;
   border-right: 2px solid #444444;
   overflow-y: auto;
+  box-shadow: inset -15px 0 15px -15px #222222;
 }
 .aside3{
   height:100%;
@@ -65,9 +82,10 @@ body,html{
 #content {font-size:18px;line-height:1.8;}
 #content h2,h3{line-height: 2;}
 blockquote p{font-size:20px;}
-.center {text-align: center;}
+.center {text-align: center;color: #FFCC00;}
 .nav-pills>li.active>a,
 .nav-pills>li.active>a:hover,
+.nav-pills>li.active>a:active,
 .nav-pills>li.active>a:focus{
   color: #333333;
   background-color: #FFCC00;
@@ -86,4 +104,53 @@ a.list-group-item {
 .nav>li>a:hover, .nav>li>a:focus {
 	text-decoration: none;
 	background-color: #FFCC00;
+	color: #222222;
+}
+
+.panel-group .panel {
+	border-radius: 0px;
+}
+
+.panel-info {
+	border:0px;
+}
+
+.panel-info>.panel-heading {
+	padding: 10px 15px;
+	border-bottom: 2px solid transparent;
+	color: #FFCC00;
+	background-color: #333333;
+	border-color: #CC0000;
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
+}
+
+.list-group-item{
+	border: 0px;
+}
+
+.list-group-item:first-child {
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
+}
+
+.list-group-item:last-child {
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+
+a.list-group-item:hover, a.list-group-item:focus {
+	color: #FF9900;
+	background-color: #222222;
+}
+
+.panel-title>a {
+	font-size: 18px;
+}
+
+.highlight, p > pre, p > code, p > nobr > code, li > code, h5 > code, .note > code {
+	background: #333;
+	color: #fff;
+	border-radius: 5px;
+	box-shadow: inset 0 1px 10px rgba(0,0,0,.3), 0 1px 0 rgba(255,255,255,.1), 0 -1px 0 rgba(0,0,0,.5);
 }
