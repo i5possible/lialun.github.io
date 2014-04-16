@@ -30,7 +30,7 @@ disqus:
   shortname: lialun
 
 # 主题设置，自动激活某个标签
-active: 技术
+active: androidtags
 
 # 中文本地化
 locals:

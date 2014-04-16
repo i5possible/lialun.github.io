@@ -40,8 +40,8 @@ a:active, a:hover{
 }
 
 .avatar{
-  width:80px;
-  height:80px;
+  width:70px;
+  height:70px;
   box-shadow: inset -15px 0 15px -15px #222222;
 }
 .aside{
@@ -169,4 +169,11 @@ pre {
 }
 .panel-primary {
 	border-color: #222222;
+}
+
+.panel-success {
+	border-color: #333333;
+}
+.panel {
+	background-color: #333333;
 }
