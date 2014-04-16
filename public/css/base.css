@@ -182,3 +182,14 @@ pre {
 .panel {
 	background-color: #333333;
 }
+
+.btn-lg, .btn-lg:hover, .btn-lg:focus {
+	color: #FFCC00;
+	background-color: #111111;
+	opacity:0.3;
+  filter: alpha(opacity=30);
+	padding: 10px 16px;
+	font-size: 20px;
+	line-height: 1.33;
+	border-radius: 6px;
+}

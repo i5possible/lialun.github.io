@@ -1,4 +1,4 @@
-permalink: /:year/:month/:day/:title.html
+﻿permalink: /:year/:month/:day/:title.html
 paginate: 10
 markdown: redcarpet
 
@@ -34,7 +34,7 @@ active: androidtags
 
 # 中文本地化
 locals:
-  tags: 标签
+  newest: 最新文章
   about: About
   java: Java
   android: Android
@@ -43,6 +43,7 @@ locals:
   book: Book
   mysql: MySQL
   server: Server
+
 #二级目录列表（其余为一级目录）
 secondary: android|java|tools|mysql
 
