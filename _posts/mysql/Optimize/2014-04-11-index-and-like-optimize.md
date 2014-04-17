@@ -20,7 +20,7 @@ from: http://blogread.cn/it/article/5333
 
 如果出现的位置〉0，表示包含该字符串。查询效率比like要高。
 
-如果：`table.field like ‘%AAA%’` 可以改为`locate (‘AAA’ , table.field) > 0`
+如果： `table.field like ‘%AAA%’` 可以改为 `locate (‘AAA’ , table.field) > 0`
 
 
 **使用[instr][instr]**

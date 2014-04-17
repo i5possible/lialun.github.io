@@ -9,11 +9,10 @@ from: http://blog.csdn.net/xiaanming/article/details/9401981
 ---
 
 在eclipse ADT下真机调试时，如果报如下错误：
-```
-* daemon not running. starting it now * 
-ADB server didn't ACK 
-* failed to start daemon * 
-```
+
+    * daemon not running. starting it now * 
+    ADB server didn't ACK 
+    * failed to start daemon * 
 一般情况下是5037端口被占用了。
 ##解决办法
 ###1.查看占用端口的线程PID

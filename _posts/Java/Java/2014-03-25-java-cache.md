@@ -43,27 +43,26 @@ Spring提供的缓存抽象层是一套非常灵活的方案。@Cacheable注解�
 在jdk1.6下运行
 {% highlight java %}
 private LoadingCache<Integer, Integer> fibonacciCache = CacheBuilder.newBuilder()
-        .maximumSize(2)
-        .build(new CacheLoader<Integer, Integer>() {
-            public Integer load(Integer i) {
-                if (i == 0)
-                    return i;
-                if (i == 1)
-                    return 1;
-                LOGGER.info("Calculating f(" + i + ")");
-                return fibonacciCache.getUnchecked(i - 2) + fibonacciCache.getUnchecked(i - 1);
-            }
-        });
-  
+	.maximumSize(2)
+	.build(new CacheLoader<Integer, Integer>() {
+		public Integer load(Integer i) {
+			if (i == 0)
+				return i;
+			if (i == 1)
+				return 1;
+			LOGGER.info("Calculating f(" + i + ")");
+			return fibonacciCache.getUnchecked(i - 2) + fibonacciCache.getUnchecked(i - 1);
+		}
+	});  
 @Test
 public void test() {
-    for (int i = 0; i < 10; i++) {
-        LOGGER.info("f(" + i + ") = " + fibonacciCache.getUnchecked(i));
-    }
+	for (int i = 0; i < 10; i++) {
+		LOGGER.info("f(" + i + ") = " + fibonacciCache.getUnchecked(i));
+	}
 }
 {% endhighlight %}
 输出为：
-```
+{% highlight sh %}
 INFO  [main]: FibonacciGuavaCacheTest - f(0) = 0
 INFO  [main]: FibonacciGuavaCacheTest - f(1) = 1
 INFO  [main]: FibonacciGuavaCacheTest - Calculating f(2)
@@ -82,5 +81,5 @@ INFO  [main]: FibonacciGuavaCacheTest - Calculating f(8)
 INFO  [main]: FibonacciGuavaCacheTest - f(8) = 21
 INFO  [main]: FibonacciGuavaCacheTest - Calculating f(9)
 INFO  [main]: FibonacciGuavaCacheTest - f(9) = 34
-```
+{% endhighlight %}
 完整代码可以在GitHub上获得。
