@@ -193,3 +193,19 @@ pre {
 	line-height: 1.33;
 	border-radius: 6px;
 }
+
+h1, .h1 {
+	font-weight: 600;
+	font-size: 40px;
+	color: #FF9900;
+}
+
+h2, .h2 {
+	font-weight: 600;
+	font-size: 32px;
+	color: #FFCC00;
+}
+
+h3, .h3 {
+	font-size: 22px;
+}

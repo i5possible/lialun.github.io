@@ -1,5 +1,6 @@
 ﻿permalink: /:year/:month/:day/:title.html
 paginate: 10
+pygments: true
 markdown: redcarpet
 
 # 作者信息
