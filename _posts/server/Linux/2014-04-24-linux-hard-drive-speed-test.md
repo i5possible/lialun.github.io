@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 用Expect实现多台机器SSH无密码登陆
+title: Linux硬盘速度测试
 category: server
 tags: Linux@server
-keywords: expect ssh login
+keywords: linux hard disk speed test ssd
 description: 
 from: 
 
