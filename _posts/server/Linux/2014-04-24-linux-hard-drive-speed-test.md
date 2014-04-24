@@ -23,7 +23,7 @@ Options:
 利用dd测试读取/写入磁盘速度
 time有计时作用，dd用于复制，从if读出，写到of。if=/dev/zero不产生输出，因此可以用来测试纯写速度。同理of=/dev/null不产生输入，可以用来测试纯读速度。bs是每次读或写的大小，即一个块的大小，count是读写块的数量。
 
-参考链接：[Linux用DD命令测试磁盘读写速度][http://zhuzike.com/linux_dd/]
+参考链接：[Linux用DD命令测试磁盘读写速度][dd]
 
 ##2. 测试数据
 ###希捷企业级硬盘4T
@@ -87,7 +87,7 @@ sys     0m4.190s
 ```
 
 [hdparm]:http://www.linuxso.com/command/hdparm.html
-[Linux用DD命令测试磁盘读写速度]:http://zhuzike.com/linux_dd/
+[dd]:http://zhuzike.com/linux_dd/
 
 
 
