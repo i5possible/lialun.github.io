@@ -77,6 +77,7 @@ expect {
 运行后发现密码输入不进去，尝试了好久找不到思路，后来看到这篇文章：
 
 [spawn-expect-send-and-interact][spawn-expect-send-and-interact]
+
 [can-the-expect-script-continue-to-execute-other-command-after-interact][can-the-expect-script-continue-to-execute-other-command-after-interact]
 
 于是尝试在输入完成密码后进行interact，代码如下：
