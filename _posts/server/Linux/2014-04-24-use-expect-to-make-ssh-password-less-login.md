@@ -73,9 +73,11 @@ expect {
 }
 }
 {% endhighlight %}
+
 运行后发现密码输入不进去，尝试了好久找不到思路，后来看到这篇文章：
-http://avdeo.com/2009/08/14/spawn-expect-send-and-interact/
-http://stackoverflow.com/questions/7568738/can-the-expect-script-continue-to-execute-other-command-after-interact
+
+[spawn-expect-send-and-interact][spawn-expect-send-and-interact]
+[can-the-expect-script-continue-to-execute-other-command-after-interact][can-the-expect-script-continue-to-execute-other-command-after-interact]
 
 于是尝试在输入完成密码后进行interact，代码如下：
 
@@ -116,3 +118,6 @@ interact
 
 [SSH_RSA]:http://blog.csdn.net/wangjunjun2008/article/details/20037101
 [expect]:http://blog.csdn.net/leexide/article/details/17485451
+
+[spawn-expect-send-and-interact]:http://avdeo.com/2009/08/14/spawn-expect-send-and-interact/
+[can-the-expect-script-continue-to-execute-other-command-after-interact]:http://stackoverflow.com/questions/7568738/can-the-expect-script-continue-to-execute-other-command-after-interact
