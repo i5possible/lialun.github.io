@@ -80,7 +80,7 @@ from: http://hi.baidu.com/ququ_s/item/e45e35e204193af62b09a43d
 `mysqldump  -uroot -p --all-databases --compact`
 
 ###`--complete-insert,  -c`
-使用完整的insert语句(包含列名称)。这么做能提高插入效率，但是可能会受到max_allowed_packet参数的影响而导致插入失败。
+使用完整的insert语句(包含列名称)。这么做能提高插入效率，但是可能会受到max\_allowed\_packet参数的影响而导致插入失败。
 
 `mysqldump  -uroot -p --all-databases --complete-insert`
 
@@ -132,7 +132,7 @@ master备份后删除日志. 这个参数将自动激活--master-data。
 `mysqldump  -uroot -p --all-databases --delete-master-logs`
 
 ###`--disable-keys`
-对于每个表，用/*!40000 ALTER TABLE tbl_name DISABLE KEYS */;和/*!40000 ALTER TABLE tbl_name ENABLE KEYS*/;语句引用INSERT语句。这样可以更快地导入dump出来的文件，因为它是在插入所有行后创建索引的。该选项只适合MyISAM表，默认为打开状态。
+对于每个表，用/*!40000 ALTER TABLE tbl\_name DISABLE KEYS */;和/*!40000 ALTER TABLE tbl_name ENABLE KEYS*/;语句引用INSERT语句。这样可以更快地导入dump出来的文件，因为它是在插入所有行后创建索引的。该选项只适合MyISAM表，默认为打开状态。
 
 `mysqldump  -uroot -p --all-databases `
 

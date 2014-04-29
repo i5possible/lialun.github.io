@@ -44,9 +44,10 @@ locals:
   book: Book
   mysql: MySQL
   server: Server
-
+  life: Life
+  
 #二级目录列表（其余为一级目录）
-secondary: android|java|tools|mysql
+secondary: java|tools|mysql
 
 # 编码
 encoding: utf-8

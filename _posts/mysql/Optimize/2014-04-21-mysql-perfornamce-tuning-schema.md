@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MySQL 数据库性能优化之表结构优化
+title: MySQL表结构优化
 category: mysql
 tags: Optimize@mysql
 keywords: mysql performance tuning schema

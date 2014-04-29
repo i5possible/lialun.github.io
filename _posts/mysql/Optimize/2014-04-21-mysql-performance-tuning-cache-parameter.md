@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MySQL数据库性能优化之缓存参数优化
+title: MySQL缓存参数优化
 category: mysql
 tags: Optimize@mysql
 keywords: mysql performance tuning parameter

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MySQL数据库性能优化之硬件瓶颈分析
+title: MySQL硬件瓶颈分析
 category: mysql
 tags: Optimize@mysql
 keywords: mysql performance tuning hardware

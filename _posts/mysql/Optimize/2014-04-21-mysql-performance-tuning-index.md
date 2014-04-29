@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MySQL 数据库性能优化之索引优化
+title: MySQL索引优化
 category: mysql
 tags: Optimize@mysql
 keywords: mysql performance tuning index
