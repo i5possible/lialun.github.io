@@ -83,6 +83,9 @@ description:
 ### 从远程仓库抓取数据
     git fetch [remote-name]
 
+### 可视化冲突编辑器
+    git mergetool
+
 ### 推送数据到远程仓库
     git push [remote-name] [branch-name]
     例如，如果要把本地的 master 分支推送到 origin 服务器上：git push origin master
