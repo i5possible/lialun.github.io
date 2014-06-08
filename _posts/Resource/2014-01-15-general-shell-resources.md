@@ -63,3 +63,10 @@ description:
 
 ### 在远程机器上运行一段脚本
     ssh user@server bash < /path/to/local/script.sh
+
+### 批量重命名
+    # ls
+    1.txt  2.txt  3.txt  4.txt  5.txt
+    # rename 's/([0-9]).txt/file_$1.txt/' *.txt
+    # ls
+    file_1.txt  file_2.txt  file_3.txt  file_4.txt  file_5.txt
