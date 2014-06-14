@@ -20,16 +20,18 @@ from: http://blogread.cn/it/article/6087
 强调唯一，就是索引值必须唯一，关键字`unique index`
 
 **创建索引**：
-{% highlight mysql %}
-1. create unique index 索引名 on 表名(列名);
-2. alter table 表名 add unique index 索引名 (列名);
-{% endhighlight %}
+
+```sql
+CREATE UNIQUE INDEX 索引名 ON 表名(列名);
+ALTER TABLE 表名 ADD UNIQUE INDEX 索引名 (列名);
+```
 
 **删除索引**：
-{% highlight mysql %}
-1. drop index 索引名 on 表名;
-2. alter table 表名 drop index 索引名;
-{% endhighlight %}
+
+```mysql
+DROP INDEX 索引名 ON 表名;
+ALTER TABLE 表名 DROP INDEX 索引名;
+```
 
 ###主键
 
@@ -37,7 +39,7 @@ from: http://blogread.cn/it/article/6087
 
 **主键创建**：
 {% highlight mysql %}
-create table test2 (id int not null primary key auto_increment);
+CREATE TABLE test2 (id INT NOT NULL primary key auto_increment);
 {% endhighlight %}
 
 ###全文索引
@@ -46,7 +48,7 @@ InnoDB不支持，Myisam支持性能比较好，一般在`CHAR`、`VARCHAR`或 `
 
 **全文索引创建**：
 {% highlight mysql %}
-CREATE TEBLE 表名( id int not null primary anto_increment,title varchar(100),FULLTEXT(title))type=myisam
+CREATE TEBLE 表名( id int NOT NULL primary anto_increment,title VARCHAR(100),FULLTEXT(title))TYPE=myisam
 {% endhighlight %}
 
 ###单列索引与多列索引
@@ -66,14 +68,13 @@ create table test3 (id int not null primary key  auto_increment,uname char(8) no
 通过命令：`show index from 表名`
 
 如：
-{% highlight mysql %}
+```sql
 mysql> show index from test3;  
+```
 
 |Table|Non_unique|Key_name|Seq_in_index|Column_name|Collation|Cardinality| Sub_part |Packed|Null|Index_type|Comment|  
-+-------+------------+----------+--------------
+|----|----|----|----|----|----|----|----|----|----|----|----|
 |test3|0|PRIMARY|1|id|A|0|NULL|NULL| |BTREE| |  
-{% endhighlight %}
-
 `Table`：表名
 
 `Key_name`：什么类型索引(这了是主键)
@@ -145,54 +146,15 @@ l  辅助索引和主键索引没什么大的区别，辅助索引的索引值�
 
 (1)首先有一个表，内容和主键索引结构如下两图：
 
-Col1
-
-Col2
-
-Col3
-
-1
-
-15
-
-phpben
-
-2
-
-20
-
-mhycoe
-
-3
-
-23
-
-phpyu
-
-4
-
-25
-
-bearpa
-
-5
-
-40
-
-phpgoo
-
-6
-
-45
-
-phphao
-
-7
-
-48
-
-phpxue
-
+| Col1 | Col2 |Col3|
+| ---- | ---- |----|
+| 1 | 15 | phpben |
+| 2 | 20 | mhycoe |
+| 3 | 23 | phpyu |
+| 4 | 25 | bearpa |
+| 5 | 40 | phpgoo |
+| 6 | 45 | phphao |
+| 7 | 48 | phpxue |
 ……
 
 
