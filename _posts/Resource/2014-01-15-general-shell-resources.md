@@ -104,3 +104,13 @@ ssh user@server bash < /path/to/local/script.sh
 # ls
 file_1.txt  file_2.txt  file_3.txt  file_4.txt  file_5.txt
 ```
+
+###截取部分文件
+```
+得到行号
+#grep -n '18:00:00' a.log
+142825:2014-07-02 18:00:00.047  INFO XXXX
+142826:2014-07-02 18:00:00.117  INFO XXXX
+截取文件（指定行号到结尾）
+#sed '142825,$p' a.log > b.log
+```
