@@ -1,12 +1,14 @@
-﻿.container {
-  width: 100%;
-  height:100%;
+﻿/* 页面配置 */
+.container {
+	width: 100%;
+	height: 100%;
 }
-body,html{
-  margin:0px;
-  height:100%;
-  overflow:hidden;
-  background-color: #333333;
+
+body, html{
+	margin:0px;
+	height:100%;
+	overflow:hidden;
+	background-color: #333333;
 }
 
 a {
@@ -19,72 +21,99 @@ a:active, a:hover{
 	outline: 0;
 }
 
-
 .row{
-  height:100%;
+	height: 100%;
+}
+
+/* 导航栏 + 目录栏 */
+.aside {
+	height: 100%;
 }
 
 .aside1{
-  background-color: #222222;
-  height:100%;
-  padding-left: 0px;
-  padding-right:0px;
-  text-align:center;
-  box-shadow: inset -15px 0 15px -15px #111111;
+	background-color: #222222;
+	height: 100%;
+	padding-left: 0px;
+	padding-right: 0px;
+	text-align: center;
+	box-shadow: inset -15px 0 15px -15px #111111;
 }
 
-.aside1 > .nav > li > a{
+.aside1 > .nav > li > a {
   padding-left: 0px;
   padding-right: 0px;
-  border-radius:0px;
+  border-radius: 0px;
   box-shadow: inset -15px 0 15px -15px #111111;
 }
 
-.avatar{
-  width:70px;
-  height:70px;
+.avatar {
+  width: 70px;
+  height: 70px;
   box-shadow: inset -15px 0 15px -15px #222222;
 }
-.aside{
-  height:100%;
+
+.aside {
+  height: 100%;
 }
-.aside1_bottom{
-  width:100%;
+
+.aside1_bottom {
+  width: 100%;
   position: absolute;
-  bottom:0px;
-  left:0px;
+  bottom: 0px;
+  left: 0px;
 }
-.aside1_bottom > .table{
+
+.aside1_bottom > .table {
   margin-bottom: 0px;
 }
+
+/* 中部目录栏 */
 .aside2{
   background-color: #333333;
-  height:100%;
+  height: 100%;
   border-right: 2px solid #444444;
   overflow-y: auto;
   box-shadow: inset -15px 0 15px -15px #222222;
 }
-.aside3{
-  height:100%;
+
+/* 右侧内容栏 */
+.aside3 {
+  height: 100%;
   overflow-y: auto;
   background-color: #444444;
 }
-.aside3-title{
+.aside3-title {
   background-color: #444444;
   padding-left: 30px;
   padding-right: 30px;
   text-align: center;
   color: #DDDDDD;
 }
-.aside3-content{
+
+.aside3-content {
   padding-left: 15px;
   padding-right: 15px;
   color: #DDDDDD;
 }
-#content {font-size:18px;line-height:140%;}
-#content h2,h3{line-height: 2;}
-blockquote p{font-size:20px;}
-.center {text-align: center;color: #FFCC00;}
+
+#content {
+	font-size:18px;
+	line-height:140%;
+}
+
+#content h2,h3 {
+	line-height: 2;
+}
+blockquote p {
+	font-size:20px;
+}
+
+/* 其他配置 */
+.center {
+	text-align: center;
+	color: #FFCC00;
+}
+
 .nav-pills>li.active>a,
 .nav-pills>li.active>a:hover,
 .nav-pills>li.active>a:active,
@@ -94,6 +123,7 @@ blockquote p{font-size:20px;}
   box-shadow: inset -15px 0 15px -15px #111111;
 }
 
+/* 显示评论按钮 */
 .show-commend{
   width:100%;
   margin-bottom:40px;
