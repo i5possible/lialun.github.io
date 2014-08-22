@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Eclipse常用快捷键
-category: tool
+category: java
 tags: [eclipse@tool,IDE@java]
 keywords: eclipse shortcut
 description: 

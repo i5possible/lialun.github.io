@@ -50,7 +50,7 @@ locals:
   other: Other
 
 #二级目录列表（其余为一级目录）
-secondary: java|tools|mysql
+secondary: tools|mysql
 
 # 编码
 encoding: utf-8
