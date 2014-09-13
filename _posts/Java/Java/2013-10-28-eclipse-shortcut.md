@@ -8,61 +8,88 @@ description:
 from: 
 
 ---
-F3:打开申明  
-F4:全局 打开类型层次结构  
-
-Ctrl+Shift+R：查找Workspace中的所有文件（包括Java文件）  
-Ctrl+Shift+T: 查找Workspace构建路径中的可找到Java类文件  
-Ctrl+Shift+ENTER：在当前行之前插入空白行  
-Ctrl+Shift+G：在workspace中搜索引用  
-Ctrl+Shift+F：根据代码风格设定重新格式化代码  
-Ctrl+Shift+B：添加/去除断点  
-Ctrl+Shift+O：快速生成import  
-Ctrl+Shift+P：定位到对于的匹配符  
-Ctrl+Shift+L：快捷键列表  
-
-Ctrl+2，L：为本地变量赋值  
-Ctrl+D：删除当前行  
-Ctrl+L：定位到当前编辑器的某一行  
-Ctrl+M：编辑器窗口最大化/还原  
-Ctrl+O：Java编辑器 显示大纲  
-Ctrl-Q：回到最后一次编辑的地方  
-Ctrl+.及Ctrl+1：下一个错误及快速修改  
-Ctrl+/：添加/删除注释  
-Ctrl+T：实现此接口的类  
-
-Shift+ENTER：在当前行之下创建一个空白行，与光标是否在行末无关
-
-ALT+/：自动提示方法  
+###编辑
+Ctrl+F 查找并替换  
+Ctrl+Shift+k 查找上一个  
+Ctrl+K 查找下一个  
+Ctrl+D 删除当前行  
+(Ctrl+)Shift+Enter 当前行的下一行(当前行)插入空行  
+Ctrl+Q 定位到最后编辑的位置  
+Alt+Shift+↓ 恢复上一个选择  
+Ctrl+1 快速修正  
+Alt+/ 代码提示  
+Ctrl+A 全部选中  
+F2 显示工具提示描述  
+Alt+Shift+↑ 选择封装元素  
+Alt+Shift+←(→) 增量选择上(下)一个同级元素  
+Ctrl+(Shift+)J 增量(逆向)查找  
 Alt+↑↓：当前行的内容往上或下移动  
-Alt+←→：在导航历史记录中后退。在利用F3跳转之后特别有用  
+Ctrl+Alt+↑(↓) 复制当前行到上(下)一行  
+Ctrl+Alt+G 将多行转化为一行  
 
-**文本编辑器**
-Ctrl+Shift+K：查找上一个  
-Ctrl+K：查找下一个  
-Ctrl+E：快速转换编辑器  
-Ctrl+F6：切换到下一个编辑器。  
-Ctrl+Shift+F6：切换到上一个编辑器。  
-Ctrl+F7：切换到下一个视图。  
-Ctrl+Shift+F7：切换到上一个视图。  
-Ctrl+F8：切换到下一个透视图。  
-Ctrl+Shift+F8：切换到上一个透视图。  
+###窗口
+F12 激活编辑器  
+Ctrl+E 快速转换编辑器  
+Ctrl+(Shift+)W (关闭所有编辑器)关闭当前窗口  
+Ctrl+(Shift+)F6 (上)下一个编辑器  
+Ctrl+(Shift+)F7 (上)下一个视图  
+Ctrl+(Shift+)F8 (上)下一个透视图  
+Ctrl+F10 显示视图菜单  
+Ctrl+M：编辑器窗口最大化/还原  
 
-**调试快捷键**
-Ctrl+Shift+B：在当前行设置断点或取消设置的断点。  
-F11：调试最后一次执行的程序。  
-Ctrl+F11：运行最后一次执行的程序。  
-F5：跟踪到方法中，当程序执行到某方法时，可以按【F5】键跟踪到方法中。  
-F6：单步执行程序。  
-F7：执行完方法，返回到调用此方法的后一条语句。  
-F8：继续执行，到下一个断点或程序结束。  
+###导航
+Ctrl+Shift+T 查找Workspace构建路径中的可找到Java类文件  
+Ctrl+Shift+R 查找Workspace中的所有文件（包括Java文件）  
+F3 打开申明  
+F4 全局 打开类型层次结构  
+Shift+F2 打开外部JavaDoc  
+Alt+←(→) 前(后)一个编辑的位置  
+Ctrl+O 显示大纲  
+Ctrl+Shift+↑(↓) 转至上(下)一个成员  
+Ctrl+L 转至行  
 
-**重构快捷键**（都是Alt+Shift开头)
+###搜索
+Ctrl+Shift+U 出现在文件中  
+Ctrl+H 打开搜索对话框  
+Ctrl+G 工作区中的声明  
+Ctrl+Shift+G 在workspace中搜索引用  
+Ctrl+T 查看继承类或实现类  
+
+###文件
+Ctrl+(Shift+)S (全部)保存  
+Ctrl+P 打印  
+Ctrl+N 新建  
+Ctrl+Shift+O：快速导入  
+
+###源代码
+Ctrl+Shift+F 格式化代码  
+Ctrl+/：添加/删除注释  
+Ctrl+Shift+X(Y) 转为大(小)写  
+Alt+Shift+J 方法添加注释  
+Ctrl+Shift+P：定位到对应的匹配符  
+Ctrl+.及Ctrl+1：下一个错误及快速修改  
+
+###运行调试
+F5：单步跳入  
+F6：单步执行  
+F7：单步返回  
+F8：继续执行  
+Ctrl+F5 单步跳入选择  
+Shift+F5 使用过滤器单步执行  
+Ctrl+Shift+B：添加/去除断点  
+F11 Debug  
+Ctrl+F11 Run  
+
+###重构
 Alt+Shift+R：重命名  
-Alt+Shift+M：抽取方法  
+Alt+Shift+M：抽取方法   
 Alt+Shift+C：修改函数结构  
 Alt+Shift+L：抽取本地变量  
 Alt+Shift+F：把Class中的local变量变为field变量  
 Alt+Shift+I：合并变量  
 Alt+Shift+V：移动函数和变量  
 Alt+Shift+Z：Undo  
+
+###其他
+Ctrl+Shift+L：快捷键列表  
+

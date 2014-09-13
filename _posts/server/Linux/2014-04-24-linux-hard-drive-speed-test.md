@@ -75,6 +75,7 @@ Timing O_DIRECT disk reads:  658 MB in  3.01 seconds = 218.85 MB/sec
 , 1.68708 seconds, 607 MB/s
 ```
 Write
+
 ```
 [root@localhost data]# time dd if=/dev/zero of=/data/test.dbf bs=8k count=300000 conv=fdatasync 
 300000+0 records in

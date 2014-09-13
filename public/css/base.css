@@ -93,12 +93,12 @@ a:active, a:hover{
 .aside3-content {
   padding-left: 15px;
   padding-right: 15px;
-  color: #DDDDDD;
+  color: #EEEEEE;
 }
 
 #content {
-	font-size:18px;
-	line-height:140%;
+	font-size:21px;
+	line-height:160%;
 }
 
 #content h2,h3 {
